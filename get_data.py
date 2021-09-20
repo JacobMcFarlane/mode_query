@@ -3,7 +3,6 @@
 
 import json
 import requests
-import os
 
 from requests.auth import HTTPBasicAuth
 
@@ -39,8 +38,5 @@ def get_run_result(query_run_result_endpoint):
 text_results_from_query = get_query_result('report_token', 'query_token') 
 
 # Writing output to a text file and then renaming to change it to a csv 
-with open("Output.txt", "w") as text_file:
+with open(file_name, "w") as text_file:
     text_file.write(text_results_from_query)
-
-
-os.rename('Output.txt', file_name)
